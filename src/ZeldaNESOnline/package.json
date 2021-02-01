@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "core": "ZeldaNES"
+  "core": "ZeldaNES",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "modloader64_deps": {
+    "ZeldaNES": "https://github.com/CppJavaCoder/ZeldaNES.git"
+  }
 }

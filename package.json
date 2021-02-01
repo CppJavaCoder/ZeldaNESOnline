@@ -1,12 +1,22 @@
 {
   "name": "ZeldaNESOnline",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CppJavaCoder/ZeldaNESOnline.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CppJavaCoder/ZeldaNESOnline/issues"
+  },
+  "homepage": "https://github.com/CppJavaCoder/ZeldaNESOnline#readme",
+  "description": ""
 }
