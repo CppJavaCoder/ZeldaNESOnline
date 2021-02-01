@@ -9,13 +9,29 @@ import { InjectCore } from 'modloader64_api/CoreInjection';
 import { SidedProxy, ProxySide } from 'modloader64_api/SidedProxy/SidedProxy';
 import { ZeldaNESStorageClient } from './ZeldaNESStorageClient';
 
-import * as API from 'ZeldaNES/ZeldaNES'
+import { PuppetOverlord } from './data/linkPuppet/PuppetOverlord';
+
+import * as API from 'libs//ZeldaNES/cores/ZeldaNES/API/Imports'
+import { ZeldaNES } from 'libs//ZeldaNES/cores/ZeldaNES/ZeldaNES'
+
+export interface IZeldaNESLobbyConfig {
+    data_syncing: boolean;
+    actor_syncing: boolean;
+    key_syncing: boolean;
+    time_sync: boolean;
+}
+
+export class ZeldaNESConfigCategory {
+    notifications: boolean = true;
+    nameplates: boolean = true;
+    syncMode: number = 0;
+}
 
 class ZeldaNESOnline implements IPlugin, IPluginServerConfig {
 
     ModLoader!: IModLoaderAPI;
     @InjectCore()
-    core!: API.ZeldaNES;
+    core!: ZeldaNES;
     @SidedProxy(ProxySide.CLIENT, ZeldaNESClient)
     client!: ZeldaNESClient;
     @SidedProxy(ProxySide.SERVER, ZeldaNESServer)
@@ -24,7 +40,7 @@ class ZeldaNESOnline implements IPlugin, IPluginServerConfig {
     //puppets: PuppetOverlord;
 
     // Storage
-    //LobbyConfig: IZeldaNESLobbyConfig = {} as IZeldaNESLobbyConfig;
+    LobbyConfig: IZeldaNESLobbyConfig = {} as IZeldaNESLobbyConfig;
     clientStorage: ZeldaNESStorageClient = new ZeldaNESStorageClient();
 
     constructor() {
