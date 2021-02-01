@@ -1,0 +1,16 @@
+build/
+CustomActorToolkit/
+node_modules/
+modloader64-p2-config.json
+modloader64-config.json
+modloader64-config.json
+*.map
+*.js
+libs/
+dist/
+*.bat
+external_cores/
+ram.bin
+Texture64-v0.1.1/
+src/MM_Adult_Malon_Rose.pak
+christmas2020_rewardmap.json
