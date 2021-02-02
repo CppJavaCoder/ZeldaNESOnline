@@ -18,6 +18,9 @@
       ],
       "@ZeldaNESOnline/*": [
         "./src/ZeldaNESOnline/*"
+      ],
+      "ZeldaNES/*": [
+        "libs\\ZeldaNES/*"
       ]
     }
   },

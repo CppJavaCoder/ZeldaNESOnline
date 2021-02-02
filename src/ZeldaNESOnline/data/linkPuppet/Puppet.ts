@@ -6,7 +6,7 @@ import Vector3 from 'modloader64_api/math/Vector3';
 import fs from 'fs';
 import path from 'path';
 
-import * as API from 'libs\\ZeldaNES/cores/ZeldaNES/API/Imports';
+import * as API from 'ZeldaNES/API/Imports';
 import ZeldaNESOnline from '../../ZeldaNESOnline';
 
 const DEADBEEF_OFFSET: number = 0x288;

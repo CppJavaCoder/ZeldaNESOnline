@@ -14,7 +14,7 @@ import { number_ref, string_ref } from 'modloader64_api/Sylvain/ImGui';
 import { ZeldaNESStorageClient } from './ZeldaNESStorageClient';
 import { ZeldaNESStorage } from './ZeldaNESStorage';
 
-import * as API from 'libs\\ZeldaNES/cores/ZeldaNES/API/Imports'
+import * as API from 'ZeldaNES/API/Imports'
 
 import path from 'path';
 import fs from 'fs';

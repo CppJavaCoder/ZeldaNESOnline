@@ -1,4 +1,4 @@
-import * as API from "libs\\ZeldaNES/cores/ZeldaNES/API/Imports"
+import * as API from "ZeldaNES/API/Imports"
 
 export class ZeldaNESStorageBase {
     inventory: API.IInventory;

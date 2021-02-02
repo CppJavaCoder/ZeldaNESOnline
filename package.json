@@ -1,14 +1,9 @@
 {
   "name": "ZeldaNESOnline",
-  "version": "1.0.19",
-  "description": "This is an online mod for [ModLoader64](https://github.com/hylian-modding/ModLoader64).",
+  "version": "1.0.0",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "ML64Postbuild": "tsc ./postbuild.ts --esModuleInterop && node ./postbuild.js",
-    "packassets": "tsc ./packassets.ts --esModuleInterop && node ./packassets.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -21,6 +16,9 @@
     "url": "https://github.com/CppJavaCoder/ZeldaNESOnline/issues"
   },
   "homepage": "https://github.com/CppJavaCoder/ZeldaNESOnline#readme",
+  "dependencies": {},
+  "devDependencies": {},
+  "description": "",
   "modloader64_deps": {
     "ZeldaNES": "https://github.com/CppJavaCoder/ZeldaNES.git"
   }

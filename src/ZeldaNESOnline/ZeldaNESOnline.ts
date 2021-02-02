@@ -11,8 +11,8 @@ import { ZeldaNESStorageClient } from './ZeldaNESStorageClient';
 
 import { PuppetOverlord } from './data/linkPuppet/PuppetOverlord';
 
-import * as API from 'libs//ZeldaNES/cores/ZeldaNES/API/Imports'
-import { ZeldaNES } from 'libs//ZeldaNES/cores/ZeldaNES/ZeldaNES'
+import * as API from 'ZeldaNES/API/Imports'
+import { ZeldaNES } from 'ZeldaNES/ZeldaNES'
 
 export interface IZeldaNESLobbyConfig {
     data_syncing: boolean;

@@ -1,5 +1,5 @@
 import { ZeldaNESStorageBase } from './ZeldaNESStorageBase'
-import * as API from 'libs\\ZeldaNES/cores/ZeldaNES/API/Imports'
+import * as API from 'ZeldaNES/API/Imports'
 
 export class ZeldaNESStorageClient extends ZeldaNESStorageBase
 {

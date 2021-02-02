@@ -4,7 +4,7 @@ import { ModLoaderAPIInject } from 'modloader64_api/ModLoaderAPIInjector';
 import { IModLoaderAPI, ModLoaderEvents } from 'modloader64_api/IModLoaderAPI';
 import { ServerNetworkHandler, IPacketHeader } from 'modloader64_api/NetworkHandler';
 import { InjectCore } from 'modloader64_api/CoreInjection';
-import * as API from 'libs//ZeldaNES/cores/ZeldaNES/ZeldaNES'
+import * as API from 'ZeldaNES/ZeldaNES'
 import ZeldaNESOnline from './ZeldaNESOnline';
 import { ZeldaNESStorageClient } from './ZeldaNESStorageClient';
 import { ZeldaNESStorage } from './ZeldaNESStorage';
