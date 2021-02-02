@@ -7,6 +7,7 @@ import { InjectCore } from 'modloader64_api/CoreInjection';
 import * as API from 'libs//ZeldaNES/cores/ZeldaNES/ZeldaNES'
 import ZeldaNESOnline from './ZeldaNESOnline';
 import { ZeldaNESStorageClient } from './ZeldaNESStorageClient';
+import { ZeldaNESStorage } from './ZeldaNESStorage';
 
 export class ZeldaNESServer
 {
@@ -16,9 +17,31 @@ export class ZeldaNESServer
     core!: API.ZeldaNES;
     @ParentReference()
     parent!: ZeldaNESOnline;
-    clientStorage: ZeldaNESStorageClient = new ZeldaNESStorageClient();
+    clientStorage: ZeldaNESStorageClient = new ZeldaNESStorageClient(this.core.link);
     //@SidedProxy(ProxySide.SERVER, WorldEvents)
     //worldEvents!: WorldEvents;
+
+    sendPacketToPlayersInScene(packet: IPacketHeader) {
+        try {
+            let storage: ZeldaNESStorage = this.ModLoader.lobbyManager.getLobbyStorage(
+                packet.lobby,
+                this.parent
+            ) as ZeldaNESStorage;
+            if (storage === null) {
+                return;
+            }
+            Object.keys(storage.players).forEach((key: string) => {
+                //if (storage.players[key] === storage.players[packet.player.uuid]) {
+                if (storage.networkPlayerInstances[key].uuid !== packet.player.uuid) {
+                    this.ModLoader.serverSide.sendPacketToSpecificPlayer(
+                        packet,
+                        storage.networkPlayerInstances[key]
+                    );
+                }
+                //}
+            });
+        } catch (err) { }
+    }
 
     constructor() {        
     }

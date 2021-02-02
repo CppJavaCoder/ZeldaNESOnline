@@ -10,8 +10,10 @@ import { ZeldaNESStorageClient } from '@ZeldaNESOnline/ZeldaNESStorageClient';
 export class PuppetData {
   sprite: API.ISprite;
   core: ZeldaCore;
-  constructor(core: ZeldaCore) {
+  modloader: IModLoaderAPI;
+  constructor(mlapi: IModLoaderAPI, core: ZeldaCore) {
     this.core = core;
     this.sprite = core.link.sprite;
+    this.modloader = mlapi;
   }
 }

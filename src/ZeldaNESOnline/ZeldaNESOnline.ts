@@ -41,7 +41,7 @@ class ZeldaNESOnline implements IPlugin, IPluginServerConfig {
 
     // Storage
     LobbyConfig: IZeldaNESLobbyConfig = {} as IZeldaNESLobbyConfig;
-    clientStorage: ZeldaNESStorageClient = new ZeldaNESStorageClient();
+    clientStorage: ZeldaNESStorageClient = new ZeldaNESStorageClient(this.core.link);
 
     constructor() {
         //this.puppets = new PuppetOverlord(this, this.core, this.clientStorage);
@@ -49,7 +49,7 @@ class ZeldaNESOnline implements IPlugin, IPluginServerConfig {
 
     sendPacketToPlayersInScene(packet: IPacketHeader): void {
         if (this.server !== undefined) {
-            //this.server.sendPacketToPlayersInScene(packet);
+            this.server.sendPacketToPlayersInScene(packet);
         }
     }
 
@@ -72,7 +72,7 @@ class ZeldaNESOnline implements IPlugin, IPluginServerConfig {
     }
 
     onTick(frame?: number): void {
-
+        this.ModLoader.logger.info("onTick");
     }
 
     @EventHandler(EventsClient.ON_PAYLOAD_INJECTED)

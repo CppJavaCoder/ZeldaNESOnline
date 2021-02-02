@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/CppJavaCoder/ZeldaNESOnline#readme",
   "modloader64_deps": {
-    "Z64Lib": "https://github.com/hylian-modding/ML64-Z64Lib.git",
     "ZeldaNES": "https://github.com/CppJavaCoder/ZeldaNES.git"
   }
 }

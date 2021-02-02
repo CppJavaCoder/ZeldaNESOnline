@@ -18,9 +18,6 @@
       ],
       "@ZeldaNESOnline/*": [
         "./src/ZeldaNESOnline/*"
-      ],
-      "@ZeldaNES/*": [
-        "./libs/ZeldaNES/cores/ZeldaNES/*"
       ]
     }
   },
