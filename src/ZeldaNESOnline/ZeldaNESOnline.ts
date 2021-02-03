@@ -41,10 +41,11 @@ class ZeldaNESOnline implements IPlugin, IPluginServerConfig {
 
     // Storage
     LobbyConfig: IZeldaNESLobbyConfig = {} as IZeldaNESLobbyConfig;
-    clientStorage: ZeldaNESStorageClient = new ZeldaNESStorageClient(this.core.link);
+    clientStorage: ZeldaNESStorageClient;
 
     constructor() {
         //this.puppets = new PuppetOverlord(this, this.core, this.clientStorage);
+        this.clientStorage = new ZeldaNESStorageClient(this.core.link);
     }
 
     sendPacketToPlayersInScene(packet: IPacketHeader): void {
