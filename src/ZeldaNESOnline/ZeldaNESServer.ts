@@ -17,7 +17,7 @@ export class ZeldaNESServer
     core!: API.ZeldaNES;
     @ParentReference()
     parent!: ZeldaNESOnline;
-    clientStorage: ZeldaNESStorageClient = new ZeldaNESStorageClient(this.core.link);
+    clientStorage: ZeldaNESStorageClient = new ZeldaNESStorageClient();
     //@SidedProxy(ProxySide.SERVER, WorldEvents)
     //worldEvents!: WorldEvents;
 

@@ -3,7 +3,7 @@ import * as API from 'ZeldaNES/API/Imports'
 
 export class ZeldaNESStorageClient extends ZeldaNESStorageBase
 {
-    constructor(link: API.ILink) {
-        super(link);
+    constructor() {
+        super();
     }
 }

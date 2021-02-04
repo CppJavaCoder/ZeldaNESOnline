@@ -53,9 +53,9 @@ export class ZeldaNESClient
     @Preinit()
     preinit() {
         //this.config = this.ModLoader.config.registerConfigCategory("ZeldaNESOnline") as ZeldaNESConfigCategory;
-        this.ModLoader.config.setData("ZeldaNESOnline", "syncMode", 0); // 0 is default, 1 is time sync, 2 is groundhog's-day sync
-        this.ModLoader.config.setData("ZeldaNESOnline", "notifications", true);
-        this.ModLoader.config.setData("ZeldaNESOnline", "nameplates", true);
+        //this.ModLoader.config.setData("ZeldaNESOnline", "syncMode", 0); // 0 is default, 1 is time sync, 2 is groundhog's-day sync
+        //this.ModLoader.config.setData("ZeldaNESOnline", "notifications", true);
+        //this.ModLoader.config.setData("ZeldaNESOnline", "nameplates", true);
 
     }
 

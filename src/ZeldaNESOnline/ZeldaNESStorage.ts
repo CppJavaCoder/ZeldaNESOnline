@@ -6,7 +6,7 @@ export class ZeldaNESStorage extends ZeldaNESStorageBase {
   networkPlayerInstances: any = {};
   players: any = {};
   saveGameSetup = false;
-  constructor(link: API.ILink) {
-    super(link);
+  constructor() {
+    super();
   }
 }
