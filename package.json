@@ -18,8 +18,8 @@
   "homepage": "https://github.com/CppJavaCoder/ZeldaNESOnline#readme",
   "dependencies": {},
   "devDependencies": {},
-  "description": "",
   "modloader64_deps": {
     "ZeldaNES": "https://github.com/CppJavaCoder/ZeldaNES.git"
-  }
+  },
+  "description": ""
 }

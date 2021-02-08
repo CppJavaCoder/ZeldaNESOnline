@@ -31,17 +31,20 @@ class ZeldaNESOnline implements IPlugin, IPluginServerConfig {
 
     ModLoader!: IModLoaderAPI;
     @InjectCore()
+    RunInjection(): void {
+        this.ModLoader.logger.debug("Injecting Core");
+    }
     core!: ZeldaNES;
-    @SidedProxy(ProxySide.CLIENT, ZeldaNESClient)
-    client!: ZeldaNESClient;
-    @SidedProxy(ProxySide.SERVER, ZeldaNESServer)
-    server!: ZeldaNESServer;
+    //@SidedProxy(ProxySide.CLIENT, ZeldaNESClient)
+    //client!: ZeldaNESClient;
+    //@SidedProxy(ProxySide.SERVER, ZeldaNESServer)
+    //server!: ZeldaNESServer;
 
     //puppets: PuppetOverlord;
 
     // Storage
-    LobbyConfig: IZeldaNESLobbyConfig = {} as IZeldaNESLobbyConfig;
-    clientStorage: ZeldaNESStorageClient = new ZeldaNESStorageClient;
+    //LobbyConfig: IZeldaNESLobbyConfig = {} as IZeldaNESLobbyConfig;
+    //clientStorage: ZeldaNESStorageClient = new ZeldaNESStorageClient();
 
     constructor() {
         //this.puppets = new PuppetOverlord(this, this.core, this.clientStorage);
@@ -49,26 +52,30 @@ class ZeldaNESOnline implements IPlugin, IPluginServerConfig {
     }
 
     sendPacketToPlayersInScene(packet: IPacketHeader): void {
-        if (this.server !== undefined) {
-            this.server.sendPacketToPlayersInScene(packet);
-        }
+        //if (this.server !== undefined) {
+        //    this.server.sendPacketToPlayersInScene(packet);
+        //}
     }
 
     getClientStorage(): ZeldaNESStorageClient | null {
-        return this.client !== undefined ? this.client.clientStorage : null;
+        return null;//this.client !== undefined ? this.client.clientStorage : null;
     }
 
     preinit(): void {
+        this.ModLoader.logger.info("pre init");
         //if (this.client !== undefined) this.client.clientStorage = this.clientStorage;
     }
 
     init(): void {
+        this.ModLoader.logger.info("init");
     }
 
     postinit(): void {
+        this.ModLoader.logger.info("post init");
     }
 
     writeModel() {
+        this.ModLoader.logger.info("writeModel");
 
     }
 
@@ -78,12 +85,14 @@ class ZeldaNESOnline implements IPlugin, IPluginServerConfig {
 
     @EventHandler(EventsClient.ON_PAYLOAD_INJECTED)
     onPayload(evt: any) {
+        this.ModLoader.logger.info("onPayload");
 
     }
     
     getServerURL(): string {
+        this.ModLoader.logger.info("getServerURL");
         //return IS_DEV_BUILD ? "192.99.70.23:8037" : "192.99.70.23:8035";
-        return "There is no IP address you DOPE!!!";
+        return "192.168.137.1:8082";
     }
     
 }

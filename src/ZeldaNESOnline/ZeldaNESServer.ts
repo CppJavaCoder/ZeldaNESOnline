@@ -22,6 +22,7 @@ export class ZeldaNESServer
     //worldEvents!: WorldEvents;
 
     sendPacketToPlayersInScene(packet: IPacketHeader) {
+        this.ModLoader.logger.info("server sending packet");
         try {
             let storage: ZeldaNESStorage = this.ModLoader.lobbyManager.getLobbyStorage(
                 packet.lobby,

@@ -28,6 +28,7 @@ export class ZeldaNESClient
     core!: API.ZeldaCore;
 
     sendPacketToPlayersInScene(packet: IPacketHeader) {
+        this.ModLoader.logger.info("sending packet");
         try{
             let storage: ZeldaNESStorage = this.ModLoader.lobbyManager.getLobbyStorage(packet.lobby, this) as ZeldaNESStorage;
             this.ModLoader.clientSide.sendPacket(packet);
@@ -52,6 +53,7 @@ export class ZeldaNESClient
 
     @Preinit()
     preinit() {
+        this.ModLoader.logger.info("client pre init");
         //this.config = this.ModLoader.config.registerConfigCategory("ZeldaNESOnline") as ZeldaNESConfigCategory;
         //this.ModLoader.config.setData("ZeldaNESOnline", "syncMode", 0); // 0 is default, 1 is time sync, 2 is groundhog's-day sync
         //this.ModLoader.config.setData("ZeldaNESOnline", "notifications", true);
@@ -61,12 +63,14 @@ export class ZeldaNESClient
 
     @Init()
     init(): void {
+        this.ModLoader.logger.info("client init");
         //this.clientStorage.syncMode = this.config.syncMode;
         //this.modelManager.clientStorage = this.clientStorage;
     }
 
     @Postinit()
     postinit() {
+        this.ModLoader.logger.info("client post init");
         //this.clientStorage.scene_keys = JSON.parse(fs.readFileSync(__dirname + '/data/scene_numbers.json').toString());
         //this.clientStorage.localization = JSON.parse(fs.readFileSync(__dirname + '/data/en_US.json').toString());
         let status: DiscordStatus = new DiscordStatus('Playing ZeldaNESOnline', 'On the title screen');
@@ -79,6 +83,7 @@ export class ZeldaNESClient
 
     @onTick()
     onTick() {
+        this.ModLoader.logger.info("client onTick");
         
     }
 }
