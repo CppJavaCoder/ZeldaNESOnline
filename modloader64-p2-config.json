@@ -1,0 +1,30 @@
+{
+  "ModLoader64": {
+    "rom": "Zelda.nes",
+    "patch": "",
+    "isServer": false,
+    "isClient": true,
+    "supportedConsoles": [
+      "N64",
+      "NES"
+    ],
+    "selectedConsole": "NES",
+    "coreOverride": "ZeldaNES",
+    "disableVIUpdates": false,
+    "retroDLL": "nestopia_libretro"
+  },
+  "NetworkEngine.Client": {
+    "isSinglePlayer": false,
+    "forceServerOverride": false,
+    "ip": "192.168.137.1",
+    "port": 8082,
+    "lobby": "ZeldaNESOnline",
+    "nickname": "Player",
+    "password": ""
+  },
+  "NetworkEngine.Server": {
+    "port": 8082,
+    "udpPort": 8082,
+    "patchSizeLimitMB": 10
+  }
+}

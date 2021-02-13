@@ -19,23 +19,19 @@ export class Puppet {
   isSpawning = false;
   isShoveled = false;
   scene: number;
-  core: API.ZeldaCore;
   void!: Vector3;
   ModLoader: IModLoaderAPI;
   tunic_color!: number;
 
   constructor(
     player: INetworkPlayer,
-    core: API.ZeldaCore,
-    pointer: number,
     ModLoader: IModLoaderAPI
   ) {
     this.player = player;
-    this.data = new PuppetData(ModLoader, core);
+    this.data = new PuppetData(ModLoader);
     this.data = null as unknown as PuppetData;
     this.scene = 0;
     this.ModLoader = ModLoader;
-    this.core = core;
     this.id = this.ModLoader.utils.getUUID();
   }
 }
